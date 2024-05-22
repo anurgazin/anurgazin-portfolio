@@ -12,7 +12,7 @@ interface Props {
 const { href, title, body, image, github } = Astro.props;
 ---
 
-<li class="link-card">
+<li class="link-card link-card-hidden">
   <a href={href} class="card-link">
     <Image src={image} alt="Site Image" class="card-image"/>
     <h2 class="card-title">
@@ -31,6 +31,17 @@ const { href, title, body, image, github } = Astro.props;
 </li>
 
 <style>
+
+@keyframes slideIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
   .link-card {
     list-style: none;
     background-color: #1e1e1e;
@@ -38,6 +49,10 @@ const { href, title, body, image, github } = Astro.props;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .link-card-hidden {
+    animation: slideIn 1.73s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
   .link-card:hover {
