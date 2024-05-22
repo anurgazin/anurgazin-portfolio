@@ -34,7 +34,7 @@ const { href, title, body, image, github } = Astro.props;
 
 @keyframes slideIn {
     from {
-      transform: translateY(100%);
+      transform: translateY(60%);
       opacity: 0;
     }
     to {
@@ -48,6 +48,7 @@ const { href, title, body, image, github } = Astro.props;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+	position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
