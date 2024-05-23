@@ -1,74 +1,155 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import GardenX from "../images/GardenX.png";
-import Pinterest from "../images/Pinterest.png";
-import G4ME_Z0NE_1 from "../images/G4ME_Z0NE_1.png";
-import G4ME_Z0NE_2 from "../images/G4ME_Z0NE_2.png";
+import intro from "../images/main/intro.png"
+import coding from "../images/main/coding.jpeg";
+import bjj from "../images/main/bjj.jpg";
+import movies from "../images/main/movies.jpg";
+import games from "../images/main/games.jpg";
 ---
 
 <Layout title="Portfolio">
-  <main>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://g4me-zone.vercel.app/"
-        title="G4ME_Z0NE"
-        body="Gaming Review platform built on React.js and Express"
-		image={G4ME_Z0NE_1}
-        github={[
-          { name: "GitHub API", link: "https://github.com/anurgazin/g4me_zone_api" },
-          { name: "GitHub", link: "https://github.com/anurgazin/g4me_zone" }
-        ]}
-      />
-      <Card
-        href="https://astro-test-g4me-zone.vercel.app/"
-        title="G4ME_Z0NE(Astro)"
-        body="Second version built on Astro"
-		image={G4ME_Z0NE_2}
-        github={[
-          { name: "GitHub API", link: "https://github.com/anurgazin/g4me_zone_api" },
-          { name: "GitHub", link: "https://github.com/anurgazin/astro-test-g4me-zone" }
-        ]}
-      />
-      <Card
-        href="https://pinterest-clone-gamma-five.vercel.app/"
-        title="Pinterest Clone"
-        body="Pinterest Clone project to test Next.js and Redux"
-		image={Pinterest}
-        github={[
-          { name: "GitHub API", link: "https://github.com/anurgazin/pinterest-clone-backend" },
-          { name: "GitHub", link: "https://github.com/anurgazin/pinterest-clone" }
-        ]}
-      />
-      <Card
-        href="https://garden-x.herokuapp.com/main"
-        title="Garden X"
-        body="College Project built on Express.js, HTML and CSS"
-		image={GardenX}
-        github={[
-          { name: "GitHub", link: "https://github.com/anurgazin/GardenX" }
-        ]}
-      />
-    </ul>
+  <main class="main-content">
+    <div class="intro section">
+      <Image src={intro} alt="Movie Image" class="image"/>
+      <div class="text-content">
+        <h1>Hi, my name is Aldiyar Nurgazin!</h1>
+        <p>A passionate web developer with a deep love for coding.</p>
+      </div>
+    </div>
+    <div class="section reverse">
+      <Image src={coding} alt="Coding Image" class="image"/>
+      <div class="text-content">
+        <h1>CODING</h1>
+        <p>I thrive on creating innovative web solutions and continuously honing my programming skills.</p>
+        <a href="/projects" class="link">My Projects</a>
+      </div>
+    </div>
+    <div class="section">
+      <Image src={bjj} alt="BJJ Image" class="image"/>
+      <div class="text-content">
+        <h1>BRAZILIAN JIU-JITSU</h1>
+        <p>Beyond coding, I'm dedicated to Brazilian Jiu-Jitsu, a discipline that has taught me perseverance and the importance of continuous improvement.</p>
+      </div>
+    </div>
+    <div class="section reverse">
+      <Image src={movies} alt="Movie Image" class="image"/>
+      <div class="text-content">
+        <h1>MOVIE</h1>
+        <p>My love for cinematography drives me to appreciate the art of filmmaking, always on the lookout for the next great movie.</p>
+        <a href="https://x.com/letterboxd" class="link" target="_blank" rel="noopener noreferrer">My Letterboxd</a>
+      </div>
+    </div>
+    <div class="section">
+      <Image src={games} alt="Gaming Image" class="image"/>
+      <div class="text-content">
+        <h1>GAMING</h1>
+        <p>Additionally, I'm an avid gamer, finding joy in exploring virtual worlds and tackling new challenges.</p>
+        <a href="https://www.backloggd.com/u/CHOCOLAT1ER/" class="link" target="_blank" rel="noopener noreferrer">My Backloggd</a>
+      </div>
+    </div>
   </main>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 100%;
-    max-width: 800px;
-    color: #f0f0f0;
-    font-size: 20px;
-    line-height: 1.6;
+	@keyframes slideIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .main-content {
+    display: flex;
+    flex-direction: column;
   }
 
-  .link-card-grid {
+  .section {
     display: flex;
-	flex-direction: column;
-    gap: 1.5rem;
-    padding: 0;
-    list-style: none;
+    align-items: center;
+    gap: 2rem;
+    background-color: #13151a;
+    padding: 2rem;
+	animation: slideIn 1.5s ease-out
+  }
+
+  .section.reverse {
+    flex-direction: row-reverse;
+	background-color: #f9f9f9;
+  }
+
+  .section.reverse .text-content h1,
+  .section.reverse .text-content p,
+  .section.reverse {
+    color: #333;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-content {
+    max-width: 600px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+	color: #fff;
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: #fff;
+  }
+
+  .link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007acc;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .link:hover {
+    background-color: #005f99;
+  }
+  @media (max-width: 768px) {
+    .section {
+      padding: 1rem;
+	  flex-direction: column;
+    }
+	.section.reverse{
+		flex-direction: column;
+	}
+    
+    .image {
+      max-width: 100%;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
   }
 </style>

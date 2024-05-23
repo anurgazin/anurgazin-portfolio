@@ -1,0 +1,75 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import GardenX from "../../images/sites/GardenX.png";
+import Pinterest from "../../images/sites/Pinterest.png";
+import G4ME_Z0NE_1 from "../../images/sites/G4ME_Z0NE_1.png";
+import G4ME_Z0NE_2 from "../../images/sites/G4ME_Z0NE_2.png";
+---
+
+<Layout title="Projects">
+  <main>
+    <h2>My Projects</h2>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="https://g4me-zone.vercel.app/"
+        title="G4ME_Z0NE"
+        body="Gaming Review platform built on React.js and Express"
+		image={G4ME_Z0NE_1}
+        github={[
+          { name: "GitHub API", link: "https://github.com/anurgazin/g4me_zone_api" },
+          { name: "GitHub", link: "https://github.com/anurgazin/g4me_zone" }
+        ]}
+      />
+      <Card
+        href="https://astro-test-g4me-zone.vercel.app/"
+        title="G4ME_Z0NE(Astro)"
+        body="Second version built on Astro"
+		image={G4ME_Z0NE_2}
+        github={[
+          { name: "GitHub API", link: "https://github.com/anurgazin/g4me_zone_api" },
+          { name: "GitHub", link: "https://github.com/anurgazin/astro-test-g4me-zone" }
+        ]}
+      />
+      <Card
+        href="https://pinterest-clone-gamma-five.vercel.app/"
+        title="Pinterest Clone"
+        body="Pinterest Clone project to test Next.js and Redux"
+		image={Pinterest}
+        github={[
+          { name: "GitHub API", link: "https://github.com/anurgazin/pinterest-clone-backend" },
+          { name: "GitHub", link: "https://github.com/anurgazin/pinterest-clone" }
+        ]}
+      />
+      <Card
+        href="https://garden-x.herokuapp.com/main"
+        title="Garden X"
+        body="College Project built on Express.js, HTML and CSS"
+		image={GardenX}
+        github={[
+          { name: "GitHub", link: "https://github.com/anurgazin/GardenX" }
+        ]}
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+    color: #f0f0f0;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .link-card-grid {
+    display: flex;
+	flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+</style>

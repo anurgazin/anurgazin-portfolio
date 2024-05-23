@@ -13,7 +13,7 @@ const { href, title, body, image, github } = Astro.props;
 ---
 
 <li class="link-card slide-in">
-  <a href={href} class="card-link">
+  <a href={href} class="card-link" target="_blank" rel="noopener noreferrer">
     <Image src={image} alt="Site Image" class="card-image"/>
     <h2 class="card-title">
       {title}
@@ -24,7 +24,7 @@ const { href, title, body, image, github } = Astro.props;
     </p>
     <div class="card-github-links">
       {github.map((git: Github) => (
-        <a href={git.link} class="github-link">{git.name}</a>
+        <a href={git.link} class="github-link" target="_blank" rel="noopener noreferrer">{git.name}</a>
       ))}
     </div>
   </a>

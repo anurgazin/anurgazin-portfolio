@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <div class="contact-container">
+    <p class="contact-item">
+      Work email: <a href="mailto:anurgazin1303@gmail.com" class="links"
+        >anurgazin1303@gmail.com</a
+      >
+    </p>
+    <p class="contact-item">
+      Personal email: <a href="mailto:dindog24@gmail.com" class="links">dindog24@gmail.com</a>
+    </p>
+    <a href="https://www.linkedin.com/in/anurgazin/" class="contact-item links" target="_blank" rel="noopener noreferrer">
+        My Linkedin
+      </a>
+    <a href="https://github.com/anurgazin" class="contact-item links" target="_blank" rel="noopener noreferrer">
+      My Github
+    </a>
+  </div>
+</Layout>
+
+<style>
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  .contact-item {
+    margin: 10px;
+    font-size: 18px;
+  }
+  .links {
+    color: white;
+  }
+</style>
