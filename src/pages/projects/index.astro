@@ -1,53 +1,85 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Card from '../../components/Card.astro';
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
 import GardenX from "../../images/sites/GardenX.png";
 import Pinterest from "../../images/sites/Pinterest.png";
 import G4ME_Z0NE_1 from "../../images/sites/G4ME_Z0NE_1.png";
 import G4ME_Z0NE_2 from "../../images/sites/G4ME_Z0NE_2.png";
+import AnimeZone from "../../images/sites/AnimeZone.png";
 ---
 
 <Layout title="Projects">
   <main>
-    <h2>My Projects</h2>
+    <h2>My Personal Projects</h2>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://g4me-zone.vercel.app/"
         title="G4ME_Z0NE"
         body="Gaming Review platform built on React.js and Express"
-		image={G4ME_Z0NE_1}
+        image={G4ME_Z0NE_1}
         github={[
-          { name: "GitHub API", link: "https://github.com/anurgazin/g4me_zone_api" },
-          { name: "GitHub", link: "https://github.com/anurgazin/g4me_zone" }
+          {
+            name: "GitHub API",
+            link: "https://github.com/anurgazin/g4me_zone_api",
+          },
+          { name: "GitHub", link: "https://github.com/anurgazin/g4me_zone" },
         ]}
       />
       <Card
         href="https://astro-test-g4me-zone.vercel.app/"
         title="G4ME_Z0NE(Astro)"
         body="Second version built on Astro"
-		image={G4ME_Z0NE_2}
+        image={G4ME_Z0NE_2}
         github={[
-          { name: "GitHub API", link: "https://github.com/anurgazin/g4me_zone_api" },
-          { name: "GitHub", link: "https://github.com/anurgazin/astro-test-g4me-zone" }
+          {
+            name: "GitHub API",
+            link: "https://github.com/anurgazin/g4me_zone_api",
+          },
+          {
+            name: "GitHub",
+            link: "https://github.com/anurgazin/astro-test-g4me-zone",
+          },
+        ]}
+      />
+      <Card
+        href="https://anime-zone-front.vercel.app/"
+        title="Anime Zone"
+        body="Anime Review platform built on Next.js and Go(Gin framework)"
+        image={AnimeZone}
+        github={[
+          {
+            name: "GitHub API",
+            link: "https://github.com/anurgazin/anime_zone_back",
+          },
+          {
+            name: "GitHub",
+            link: "https://github.com/anurgazin/anime_zone_front",
+          },
         ]}
       />
       <Card
         href="https://pinterest-clone-gamma-five.vercel.app/"
         title="Pinterest Clone"
         body="Pinterest Clone project to test Next.js and Redux"
-		image={Pinterest}
+        image={Pinterest}
         github={[
-          { name: "GitHub API", link: "https://github.com/anurgazin/pinterest-clone-backend" },
-          { name: "GitHub", link: "https://github.com/anurgazin/pinterest-clone" }
+          {
+            name: "GitHub API",
+            link: "https://github.com/anurgazin/pinterest-clone-backend",
+          },
+          {
+            name: "GitHub",
+            link: "https://github.com/anurgazin/pinterest-clone",
+          },
         ]}
       />
       <Card
         href="https://garden-x.herokuapp.com/main"
         title="Garden X"
         body="College Project built on Express.js, HTML and CSS"
-		image={GardenX}
+        image={GardenX}
         github={[
-          { name: "GitHub", link: "https://github.com/anurgazin/GardenX" }
+          { name: "GitHub", link: "https://github.com/anurgazin/GardenX" },
         ]}
       />
     </ul>
@@ -67,7 +99,7 @@ import G4ME_Z0NE_2 from "../../images/sites/G4ME_Z0NE_2.png";
 
   .link-card-grid {
     display: flex;
-	flex-direction: column;
+    flex-direction: column;
     gap: 1.5rem;
     padding: 0;
     list-style: none;
